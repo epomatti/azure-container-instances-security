@@ -15,9 +15,9 @@ resource "azurerm_container_group" "main" {
     cpu    = var.ci_cpu
     memory = var.ci_memory
 
-    security {
-      privilege_enabled = false
-    }
+    # security {
+    #   privilege_enabled = false
+    # }
 
     ports {
       port     = 8080
