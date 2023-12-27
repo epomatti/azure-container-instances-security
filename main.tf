@@ -32,15 +32,20 @@ module "cr" {
 
 module "storage" {
   source              = "./modules/storage"
+  workload            = local.workload
   resource_group_name = azurerm_resource_group.default.name
   location            = azurerm_resource_group.default.location
 }
 
 module "ci" {
+  count               = var.create_containers == true ? 1 : 0
   source              = "./modules/ci"
   workload            = local.workload
   resource_group_name = azurerm_resource_group.default.name
   location            = azurerm_resource_group.default.location
-  
-  subnet_id = module.vnet.subnet_id
+
+  subnet_id = module.vnet.containers_subnet_id
+  ci_sku    = var.ci_sku
+  ci_cpu    = var.ci_cpu
+  ci_memory = var.ci_memory
 }

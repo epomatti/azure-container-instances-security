@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "default" {
-  name                          = "staksazcloudsh789"
+  name                          = "st${var.workload}1234"
   resource_group_name           = var.resource_group_name
   location                      = var.location
   account_tier                  = "Standard"
@@ -8,15 +8,10 @@ resource "azurerm_storage_account" "default" {
   enable_https_traffic_only     = true
   min_tls_version               = "TLS1_2"
   public_network_access_enabled = true
-
-  tags = {
-    # This is added eventually by the Azure Cloud Shell
-    ms-resource-usage = "azure-cloud-shell"
-  }
 }
 
 resource "azurerm_storage_share" "file_share" {
-  name                 = "cloudshell"
+  name                 = "share"
   storage_account_name = azurerm_storage_account.default.name
   quota                = 50
 }
