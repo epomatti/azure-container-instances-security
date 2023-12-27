@@ -1,0 +1,65 @@
+<mxfile host="Electron" modified="2023-12-27T13:14:50.644Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.11 Chrome/114.0.5735.289 Electron/25.9.8 Safari/537.36" etag="1Z6eRyzzfOOk-pOA8FFu" version="22.1.11" type="device">
+  <diagram name="Page-1" id="krRFFeN255ZlQMhRuegP">
+    <mxGraphModel dx="1195" dy="697" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="15KuQEQXuncB6c0qKe7M-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="280" width="410" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-4" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks.svg;" vertex="1" parent="1">
+          <mxGeometry x="330" y="280" width="50.25" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-8" value="Subnet" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="370" y="327.25" width="120" height="142.75" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-3" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/networking/Application_Gateways.svg;" vertex="1" parent="1">
+          <mxGeometry x="395" y="368" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="15KuQEQXuncB6c0qKe7M-6" target="15KuQEQXuncB6c0qKe7M-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-6" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_cloud.svg;" vertex="1" parent="1">
+          <mxGeometry x="200" y="387.25" width="50" height="31.5" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-9" value="Subnet" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="570" y="327.25" width="120" height="142.75" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-1" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/compute/Container_Instances.svg;" vertex="1" parent="1">
+          <mxGeometry x="598" y="369" width="64" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="15KuQEQXuncB6c0qKe7M-3" target="15KuQEQXuncB6c0qKe7M-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="413" as="sourcePoint" />
+            <mxPoint x="405" y="413" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-11" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/containers/Container_Registries.svg;" vertex="1" parent="1">
+          <mxGeometry x="770" y="377" width="68" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-12" value="pull" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="15KuQEQXuncB6c0qKe7M-1" target="15KuQEQXuncB6c0qKe7M-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="413" as="sourcePoint" />
+            <mxPoint x="608" y="413" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="730" y="403" />
+              <mxPoint x="730" y="403" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-13" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Managed_Identities.svg;" vertex="1" parent="1">
+          <mxGeometry x="700" y="337" width="30.4" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-14" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/storage/Azure_Fileshare.svg;" vertex="1" parent="1">
+          <mxGeometry x="596" y="520" width="68" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="15KuQEQXuncB6c0qKe7M-15" value="mount" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=block;endFill=1;" edge="1" parent="1" source="15KuQEQXuncB6c0qKe7M-1" target="15KuQEQXuncB6c0qKe7M-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="413" as="sourcePoint" />
+            <mxPoint x="608" y="413" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

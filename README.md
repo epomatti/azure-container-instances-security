@@ -1,5 +1,9 @@
 # Azure Container Registry - Security features
 
+Deploy Azure Container Instances groups in a VNET.
+
+<img src=".assets/azure-ci.png" width=500/>
+
 Start by creating the `.auto.tfvars` from the template:
 
 ```sh
@@ -34,3 +38,5 @@ Create the remaining resources:
 ```sh
 terraform apply -auto-approve
 ```
+
+Connect to the application using the Application Gateway public address.
