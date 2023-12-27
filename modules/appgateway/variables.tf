@@ -13,3 +13,7 @@ variable "location" {
 variable "subnet_id" {
   type = string
 }
+
+variable "ci_ip_address" {
+  type = string
+}

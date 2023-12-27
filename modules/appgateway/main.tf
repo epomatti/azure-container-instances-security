@@ -2,7 +2,9 @@ resource "azurerm_public_ip" "default" {
   name                = "pip-${var.workload}"
   resource_group_name = var.resource_group_name
   location            = var.location
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
+  sku                 = "Standard"
+  sku_tier            = "Regional"
 }
 
 locals {
@@ -42,7 +44,8 @@ resource "azurerm_application_gateway" "default" {
   }
 
   backend_address_pool {
-    name = local.backend_address_pool_name
+    name         = local.backend_address_pool_name
+    ip_addresses = [var.ci_ip_address]
   }
 
   backend_http_settings {

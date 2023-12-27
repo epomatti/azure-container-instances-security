@@ -51,3 +51,13 @@ module "ci" {
   acr_id           = module.cr.id
   acr_login_server = module.cr.login_server
 }
+
+module "app_gateway" {
+  count               = var.create_containers == true ? 1 : 0
+  source              = "./modules/appgateway"
+  workload            = local.workload
+  resource_group_name = azurerm_resource_group.default.name
+  location            = azurerm_resource_group.default.location
+  subnet_id           = module.vnet.app_gateway_subnet_id
+  ci_ip_address       = module.ci[0].ip_address
+}
