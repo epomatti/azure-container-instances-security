@@ -44,8 +44,10 @@ module "ci" {
   resource_group_name = azurerm_resource_group.default.name
   location            = azurerm_resource_group.default.location
 
-  subnet_id = module.vnet.containers_subnet_id
-  ci_sku    = var.ci_sku
-  ci_cpu    = var.ci_cpu
-  ci_memory = var.ci_memory
+  subnet_id        = module.vnet.containers_subnet_id
+  ci_sku           = var.ci_sku
+  ci_cpu           = var.ci_cpu
+  ci_memory        = var.ci_memory
+  acr_id           = module.cr.id
+  acr_login_server = module.cr.login_server
 }

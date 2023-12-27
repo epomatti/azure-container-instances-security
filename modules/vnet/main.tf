@@ -10,6 +10,17 @@ resource "azurerm_subnet" "containers" {
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.default.name
   address_prefixes     = ["10.0.0.0/24"]
+
+  delegation {
+    name = "Microsoft.ContainerInstance.containerGroups"
+
+    service_delegation {
+      name = "Microsoft.ContainerInstance/containerGroups"
+      actions = [
+        "Microsoft.Network/virtualNetworks/subnets/action",
+      ]
+    }
+  }
 }
 
 resource "azurerm_subnet" "app_gateway" {

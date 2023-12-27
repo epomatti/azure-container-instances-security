@@ -26,3 +26,10 @@ variable "ci_memory" {
   type = number
 }
 
+variable "acr_id" {
+  type = string
+}
+
+variable "acr_login_server" {
+  type = string
+}
