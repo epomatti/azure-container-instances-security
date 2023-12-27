@@ -25,7 +25,7 @@ resource "azurerm_application_gateway" "default" {
   sku {
     name     = "Standard_v2"
     tier     = "Standard_v2"
-    capacity = 2
+    capacity = 1
   }
 
   gateway_ip_configuration {

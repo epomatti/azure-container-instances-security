@@ -44,12 +44,15 @@ module "ci" {
   resource_group_name = azurerm_resource_group.default.name
   location            = azurerm_resource_group.default.location
 
-  subnet_id        = module.vnet.containers_subnet_id
-  ci_sku           = var.ci_sku
-  ci_cpu           = var.ci_cpu
-  ci_memory        = var.ci_memory
-  acr_id           = module.cr.id
-  acr_login_server = module.cr.login_server
+  subnet_id                          = module.vnet.containers_subnet_id
+  ci_sku                             = var.ci_sku
+  ci_cpu                             = var.ci_cpu
+  ci_memory                          = var.ci_memory
+  acr_id                             = module.cr.id
+  acr_login_server                   = module.cr.login_server
+  storage_account_name               = module.storage.storage_account_name
+  storage_account_primary_access_key = module.storage.primary_access_key
+  storage_account_share_name         = module.storage.share_name
 }
 
 module "app_gateway" {

@@ -33,3 +33,16 @@ variable "acr_id" {
 variable "acr_login_server" {
   type = string
 }
+
+variable "storage_account_name" {
+  type = string
+}
+
+variable "storage_account_primary_access_key" {
+  type      = string
+  sensitive = true
+}
+
+variable "storage_account_share_name" {
+  type = string
+}
