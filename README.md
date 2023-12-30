@@ -40,3 +40,18 @@ terraform apply -auto-approve
 ```
 
 Connect to the application using the Application Gateway public address.
+
+
+### YAML deployment
+
+An option to [deploy containers with YAML][1] files is also available.
+
+Example copied from the documentation in the [deploy-aci.yaml](./deploy-aci.yaml) file:
+
+```sh
+az group create --name myResourceGroup --location eastus
+az container create --resource-group myResourceGroup --file deploy-aci.yaml
+```
+
+
+[1]: https://learn.microsoft.com/en-us/azure/container-instances/container-instances-multi-container-yaml#deploy-the-container-group
