@@ -6,6 +6,10 @@ variable "acr_sku" {
   type = string
 }
 
+variable "acr_admin_enabled" {
+  type = bool
+}
+
 variable "create_containers" {
   type = bool
 }

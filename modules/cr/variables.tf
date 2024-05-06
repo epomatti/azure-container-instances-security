@@ -13,3 +13,7 @@ variable "location" {
 variable "sku" {
   type = string
 }
+
+variable "admin_enabled" {
+  type = bool
+}

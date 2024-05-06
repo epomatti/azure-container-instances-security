@@ -1,7 +1,8 @@
 location = "eastus2"
 
 # Container Registry
-acr_sku = "Premium"
+acr_sku           = "Premium"
+acr_admin_enabled = true
 
 # Container Instances
 create_containers = true

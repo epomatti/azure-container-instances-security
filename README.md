@@ -19,6 +19,8 @@ terraform apply -auto-approve
 
 The container image must exist in order to deploy the CI.
 
+## Deployment
+
 Once the resources are created, build and push the application image to the ACR:
 
 ```sh
@@ -41,8 +43,7 @@ terraform apply -auto-approve
 
 Connect to the application using the Application Gateway public address.
 
-
-### YAML deployment
+## Deployment (YAML)
 
 An option to [deploy containers with YAML][1] files is also available.
 
@@ -53,5 +54,37 @@ az group create --name myResourceGroup --location eastus
 az container create --resource-group myResourceGroup --file deploy-aci.yaml
 ```
 
+## Cache
+
+Azure Container Registry supports [Artifact Cache][2]. Follow the steps in the documentation to create a caching rule.
+
+Here's a NGINX rule via [CLI][3]:
+
+> ![IMPORTANT]
+> Use **authentication** for real world deployment.
+
+```sh
+az acr cache create -r crchokolatte -n nginx -s docker.io/library/nginx -t nginx
+```
+
+Login to ACR and run a test pull command:
+
+```sh
+az acr login -n crchokolatte
+docker pull crchokolatte.azurecr.io/nginx:latest
+```
+
+Deploy a new instance using the cached NGINX:
+
+> ![IMPORTANT]
+> This procedure might require a [service identity][4].
+
+```sh
+az group create --name rg-artifact-cache --location eastus
+az container create --resource-group rg-artifact-cache --file deploy-nginx-cached.yaml
+```
 
 [1]: https://learn.microsoft.com/en-us/azure/container-instances/container-instances-multi-container-yaml#deploy-the-container-group
+[2]: https://learn.microsoft.com/en-us/azure/container-registry/tutorial-artifact-cache
+[3]: https://learn.microsoft.com/en-us/azure/container-registry/tutorial-enable-artifact-cache-cli
+[4]: https://learn.microsoft.com/en-us/answers/questions/1289158/container-image-unable-to-pull-private-azure-conta

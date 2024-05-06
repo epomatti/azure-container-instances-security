@@ -4,9 +4,11 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
+        "azurecr",
         "azuredocs",
         "crchokolatte",
-        "helloworld"
+        "helloworld",
+        "nginx"
     ],
     "ignoreWords": [],
     "import": []

@@ -1,0 +1,21 @@
+apiVersion: 2019-12-01
+location: eastus
+name: nginxGroup
+properties:
+  containers:
+    - name: nginx-cached
+      properties:
+        image: crchokolatte.azurecr.io/nginx:latest
+        resources:
+          requests:
+            cpu: 1
+            memoryInGb: 1.5
+        ports:
+          - port: 80
+  osType: Linux
+  ipAddress:
+    type: Public
+    ports:
+      - protocol: tcp
+        port: 80
+type: Microsoft.ContainerInstance/containerGroups
