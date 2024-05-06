@@ -60,7 +60,7 @@ Azure Container Registry supports [Artifact Cache][2]. Follow the steps in the d
 
 Here's a NGINX rule via [CLI][3]:
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > Use **authentication** for real world deployment.
 
 ```sh
@@ -76,7 +76,7 @@ docker pull crchokolatte.azurecr.io/nginx:latest
 
 Deploy a new instance using the cached NGINX:
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > This procedure might require a [service identity][4].
 
 ```sh
