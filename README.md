@@ -2,7 +2,7 @@
 
 Deploy Azure Container Instances groups in a VNET.
 
-<img src=".assets/azure-ci.png" width=500/>
+<img src=".assets/azure-container-instances.png" />
 
 Start by creating the `.auto.tfvars` from the template:
 
