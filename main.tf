@@ -28,6 +28,7 @@ module "cr" {
   workload            = local.workload
   resource_group_name = azurerm_resource_group.default.name
   location            = azurerm_resource_group.default.location
+  sku                 = var.acr_sku
 }
 
 module "storage" {
@@ -63,4 +64,8 @@ module "app_gateway" {
   location            = azurerm_resource_group.default.location
   subnet_id           = module.vnet.app_gateway_subnet_id
   ci_ip_address       = module.ci[0].ip_address
+
+  sku_name     = var.agw_sku_name
+  sku_tier     = var.agw_sku_tier
+  sku_capacity = var.agw_sku_capacity
 }

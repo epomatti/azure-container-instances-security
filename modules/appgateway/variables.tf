@@ -17,3 +17,15 @@ variable "subnet_id" {
 variable "ci_ip_address" {
   type = string
 }
+
+variable "sku_name" {
+  type = string
+}
+
+variable "sku_tier" {
+  type = string
+}
+
+variable "sku_capacity" {
+  type = string
+}
