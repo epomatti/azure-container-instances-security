@@ -54,7 +54,7 @@ az group create --name myResourceGroup --location eastus
 az container create --resource-group myResourceGroup --file deploy-aci.yaml
 ```
 
-## Cache
+## Artifact Cache
 
 Azure Container Registry supports [Artifact Cache][2]. Follow the steps in the documentation to create a caching rule.
 
