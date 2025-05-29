@@ -1,0 +1,3 @@
+version: v1.1.0
+steps:
+  - cmd: acr purge --registry $RegistryName --filter 'vulnerable-image:^(?!latest$).*' --ago 0d

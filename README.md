@@ -61,7 +61,7 @@ Azure Container Registry supports [Artifact Cache][2]. Follow the steps in the d
 Here's a NGINX rule via [CLI][3]:
 
 > [!IMPORTANT]
-> Use **authentication** for real world deployment.
+> Use authentication for real world deployment
 
 ```sh
 az acr cache create -r crchokolatte -n nginx -s docker.io/library/nginx -t nginx
@@ -84,7 +84,39 @@ az group create --name rg-artifact-cache --location eastus
 az container create --resource-group rg-artifact-cache --file deploy-nginx-cached.yaml
 ```
 
+## Purge
+
+Testing the [purge][purge] feature.
+
+Build and tag the application image:
+
+```sh
+docker build -f ./app/Dockerfile.amd64 \
+  -t "<registry-name>.azurecr.io/vulnerable-image:latest" \
+  -t "<registry-name>.azurecr.io/vulnerable-image:1.0.0" \
+  ./app
+```
+
+Login to ACR and push the image tags:
+
+```sh
+az acr login -n <registry-name>
+docker push "<registry-name>.azurecr.io/vulnerable-image:latest"
+docker push "<registry-name>.azurecr.io/vulnerable-image:1.0.0"
+```
+
+Purge the images using [ACR tasks][acr-tasks]:
+
+> [!TIP]
+> Preview the purge with `--dry-run`
+
+```sh
+az acr run --registry <your-acr-name> --file purge.yaml /dev/null
+```
+
 [1]: https://learn.microsoft.com/en-us/azure/container-instances/container-instances-multi-container-yaml#deploy-the-container-group
 [2]: https://learn.microsoft.com/en-us/azure/container-registry/tutorial-artifact-cache
 [3]: https://learn.microsoft.com/en-us/azure/container-registry/tutorial-enable-artifact-cache-cli
 [4]: https://learn.microsoft.com/en-us/answers/questions/1289158/container-image-unable-to-pull-private-azure-conta
+[purge]: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-auto-purge
+[acr-tasks]: https://learn.microsoft.com/en-us/azure/container-registry/container-registry-tasks-reference-yaml
