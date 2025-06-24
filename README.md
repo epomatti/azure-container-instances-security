@@ -114,6 +114,11 @@ Purge the images using [ACR tasks][acr-tasks]:
 az acr run --registry <your-acr-name> --file purge.yaml /dev/null
 ```
 
+## Query Vulnerabilities
+
+Sample queries can be found at [DfC resource graph samples](https://docs.azure.cn/en-us/defender-for-cloud/resource-graph-samples?tabs=azure-cli) and [ACR resource graph samples](https://learn.microsoft.com/en-us/azure/container-registry/resource-graph-samples?tabs=azure-cli).
+
+
 [1]: https://learn.microsoft.com/en-us/azure/container-instances/container-instances-multi-container-yaml#deploy-the-container-group
 [2]: https://learn.microsoft.com/en-us/azure/container-registry/tutorial-artifact-cache
 [3]: https://learn.microsoft.com/en-us/azure/container-registry/tutorial-enable-artifact-cache-cli
